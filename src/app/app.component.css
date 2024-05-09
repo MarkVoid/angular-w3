@@ -1,0 +1,78 @@
+
+.left {
+  border: 1px solid #000;
+  width: 300px;
+  float: left;
+  margin-top: 100px;
+  margin-left: 200px;
+}
+
+.line {
+  display:flex;
+  width:2px;
+  height: 100%;
+  background-color: #727272;
+}
+
+.right {
+  order: 1;
+  margin: 50px;
+  background-color: #d6d6d6;
+  display: flex;
+  float:right;
+  align-items: flex-end;
+  flex-direction: column;
+  border: 1px solid #000;
+  width: 300px;
+
+  padding-left:20px;
+  overflow: auto;
+}
+
+.title-display,
+.desc-display {
+  padding: 20px;
+}
+
+.right > div {
+  padding: 20px;
+  width:300px;
+  word-wrap: break-word;
+}
+
+.note-content {
+  padding: 20px;
+}
+
+.right button {
+  width: 100px;
+  height: 40px;
+  margin-left:10px;
+}
+
+.left button {
+  background-color: rgb(255, 129, 129);
+  width: 240px;
+}
+
+.notes {
+  padding: 20px;
+}
+
+.title-input {
+  width: 233px;
+}
+
+textarea[type="desc"] {
+  width: 240px;
+  height: 100px;
+  padding: 10px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+}

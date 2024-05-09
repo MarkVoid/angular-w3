@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="left">
+    <div class="notes">
+      <input
+        [(ngModel)]="modelTitle"
+        type="title"
+        placeholder="Заглавие на бележката"
+        class="title-input"
+      />
+      <div>Въведохте {{ modelTitle.length }}/{{ TitleSize }}</div>
+      <div *ngIf="modelTitle.length > TitleSize" class="error">
+        Заглавието е твърде дълго
+      </div>
+      <textarea
+        [(ngModel)]="modelNote"
+        type="desc"
+        placeholder="Съдържание на бележката"
+      ></textarea>
+      <div>Въведохте {{ modelNote.length }}/{{ DescSize }}</div>
+      <div *ngIf="modelNote.length > DescSize" class="error">
+        Съдържанието на бележката е твърде дълго
+      </div>
+      <button (click)="processSaveNote()">Съхрани бележката</button>
+    </div>
+  </div>
+
+  <div class="line"></div>
+
+  <div *ngFor="let note of notes" class="right">
+    <div class="note-content" (click)="selectNote(note)" style="cursor: pointer;">
+      <div class="title-display">Заглавие: {{ note.title }}</div>
+      <div class="desc-display">Съдържание: {{ note.content }}</div>
+  
+      <div *ngIf="note.selected">
+        <button *ngIf="!editing" (click)="selectNoteForEdit(note)">Редактирай</button>
+        <button *ngIf="editing" (click)="processEdit()">Запази</button>
+        <button (click)="deleteNote(note)">Изтрий</button>
+      </div>
+    </div>
+  </div>
+  
+</div>
